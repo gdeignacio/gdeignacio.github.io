@@ -9,40 +9,44 @@
     <meta name="description" content="Clip de video">
 </head>
 
-<body>
+<body> 
 
 <div style="text-align:center"> 
-    <button onclick="makeBig()">Big</button>
-    <button onclick="makeSmall()">Small</button>
-    <button onclick="makeNormal()">Normal</button>
-    <br><br>
-    <video width="420" controls>
-        <source src="media/clip_web_avidemux.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
+  <button onclick="playPause()">Play/Pause</button> 
+  <button onclick="makeBig()">Big</button>
+  <button onclick="makeSmall()">Small</button>
+  <button onclick="makeNormal()">Normal</button>
+  <br><br>
+  <video id="video1" width="420">
+    <source src="media/clip_web_avidemux.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 </div> 
 
 <script> 
-    var myVideo = document.getElementById("video1"); 
-    
-    function makeBig() { 
-        myVideo.width = 640; 
-    } 
+var myVideo = document.getElementById("video1"); 
 
-    function makeSmall() { 
-        myVideo.width = 320; 
-    } 
+function playPause() { 
+  if (myVideo.paused) 
+    myVideo.play(); 
+  else 
+    myVideo.pause(); 
+} 
 
-    function makeNormal() { 
-        myVideo.width = 420; 
-    } 
+function makeBig() { 
+    myVideo.width = 560; 
+} 
 
+function makeSmall() { 
+    myVideo.width = 320; 
+} 
+
+function makeNormal() { 
+    myVideo.width = 420; 
+} 
 </script> 
 
-
 <p>Prueba de video</p>
-
-
 
 </body> 
 
